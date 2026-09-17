@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Route Health — Analytics Dashboard</title>
+    <link rel="stylesheet" href="/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Route Health Dashboard</h1>
+            <nav>
+                <a href="/">Submit Feedback</a>
+                <a href="/dashboard.html" class="active">Analytics Dashboard</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <!-- Route Rankings Table -->
+            <div class="card">
+                <h2>Route Rankings <span style="font-weight:400; color: var(--text-muted); font-size:0.85rem;">(lowest rating first)</span></h2>
+                <div style="overflow-x:auto;">
+                    <table class="data-table" id="rankings-table">
+                        <thead>
+                            <tr>
+                                <th>Route</th>
+                                <th>Overall Rating</th>
+                                <th>Total Feedback</th>
+                                <th>This Month</th>
+                                <th>Top Issue</th>
+                                <th>Worst Period</th>
+                            </tr>
+                        </thead>
+                        <tbody id="rankings-body"></tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Route Detail Panel -->
+            <div class="card route-detail" id="route-detail">
+                <h2 id="detail-title">Route Detail</h2>
+                <div class="route-summary" id="route-summary"></div>
+
+                <div class="dashboard-grid">
+                    <div class="card" style="box-shadow:none; border:1px solid var(--border);">
+                        <h2>Sub-Rating Averages</h2>
+                        <div class="chart-container">
+                            <canvas id="category-chart"></canvas>
+                        </div>
+                    </div>
+                    <div class="card" style="box-shadow:none; border:1px solid var(--border);">
+                        <h2>Severity Breakdown</h2>
+                        <div class="chart-container">
+                            <canvas id="severity-chart"></canvas>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card" style="box-shadow:none; border:1px solid var(--border); margin-top:12px;">
+                    <h2>Trend (30-day comparison)</h2>
+                    <div id="trend-display"></div>
+                </div>
+            </div>
+
+            <!-- Heatmap -->
+            <div class="card">
+                <h2>Feedback Heatmap <span style="font-weight:400; color: var(--text-muted); font-size:0.85rem;">(volume by hour &times; day)</span></h2>
+                <div id="heatmap-container" class="heatmap-grid"></div>
+            </div>
+        </div>
+    </main>
+
+    <script src="/dashboard.js"></script>
+</body>
+</html>

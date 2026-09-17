@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Route Health — Submit Feedback</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Route Health Dashboard</h1>
+            <nav>
+                <a href="/" class="active">Submit Feedback</a>
+                <a href="/dashboard.html">Analytics Dashboard</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="container" style="max-width: 640px;">
+            <div class="card">
+                <h2>Rate Your Trip</h2>
+                <p style="color: var(--text-muted); margin-bottom: 20px; font-size: 0.9rem;">
+                    Submit feedback about your bus trip. Your ratings help us identify and fix service issues.
+                </p>
+
+                <div id="success-msg" class="success-msg">
+                    <strong>Feedback submitted!</strong>
+                    <span id="category-result"></span>
+                </div>
+
+                <form id="feedback-form">
+                    <label for="route-select">Route</label>
+                    <select id="route-select" required>
+                        <option value="">Select route…</option>
+                    </select>
+
+                    <div class="rating-group">
+                        <label>Overall Experience</label>
+                        <div class="star-group" data-field="rating_overall">
+                            <span class="star" data-value="1">&#9733;</span>
+                            <span class="star" data-value="2">&#9733;</span>
+                            <span class="star" data-value="3">&#9733;</span>
+                            <span class="star" data-value="4">&#9733;</span>
+                            <span class="star" data-value="5">&#9733;</span>
+                        </div>
+                    </div>
+
+                    <div class="rating-group">
+                        <label>Punctuality</label>
+                        <div class="star-group" data-field="rating_punctuality">
+                            <span class="star" data-value="1">&#9733;</span>
+                            <span class="star" data-value="2">&#9733;</span>
+                            <span class="star" data-value="3">&#9733;</span>
+                            <span class="star" data-value="4">&#9733;</span>
+                            <span class="star" data-value="5">&#9733;</span>
+                        </div>
+                    </div>
+
+                    <div class="rating-group">
+                        <label>Cleanliness</label>
+                        <div class="star-group" data-field="rating_cleanliness">
+                            <span class="star" data-value="1">&#9733;</span>
+                            <span class="star" data-value="2">&#9733;</span>
+                            <span class="star" data-value="3">&#9733;</span>
+                            <span class="star" data-value="4">&#9733;</span>
+                            <span class="star" data-value="5">&#9733;</span>
+                        </div>
+                    </div>
+
+                    <div class="rating-group">
+                        <label>Crowding</label>
+                        <div class="star-group" data-field="rating_crowding">
+                            <span class="star" data-value="1">&#9733;</span>
+                            <span class="star" data-value="2">&#9733;</span>
+                            <span class="star" data-value="3">&#9733;</span>
+                            <span class="star" data-value="4">&#9733;</span>
+                            <span class="star" data-value="5">&#9733;</span>
+                        </div>
+                    </div>
+
+                    <div class="rating-group">
+                        <label>Driver Behaviour</label>
+                        <div class="star-group" data-field="rating_driver_behaviour">
+                            <span class="star" data-value="1">&#9733;</span>
+                            <span class="star" data-value="2">&#9733;</span>
+                            <span class="star" data-value="3">&#9733;</span>
+                            <span class="star" data-value="4">&#9733;</span>
+                            <span class="star" data-value="5">&#9733;</span>
+                        </div>
+                    </div>
+
+                    <label for="comment">Comment (optional)</label>
+                    <textarea id="comment" placeholder="Tell us about your experience — our AI will auto-categorize it…"></textarea>
+
+                    <button type="submit" class="btn" id="submit-btn">Submit Feedback</button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <script src="/app.js"></script>
+</body>
+</html>
