@@ -19,7 +19,7 @@ def _seed_if_empty():
     db = SessionLocal()
     try:
         if db.query(Route).count() == 0:
-            from scripts.seed_data import seed
+            from app.seed_data import seed
             seed()
     finally:
         db.close()
