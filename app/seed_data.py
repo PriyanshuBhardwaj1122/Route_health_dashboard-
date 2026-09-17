@@ -105,6 +105,9 @@ def generate_rating(base: float, spread: float = 1.0) -> int:
 
 
 def seed():
+    # Fixed seed: every cold start / serverless instance generates the
+    # same demo data, so totals stay consistent across requests.
+    random.seed(42)
     Base.metadata.drop_all(bind=engine)
     Base.metadata.create_all(bind=engine)
     db = SessionLocal()
