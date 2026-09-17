@@ -1,20 +1,11 @@
 {
-  "builds": [
-    {
-      "src": "api/index.py",
-      "use": "@vercel/python",
-      "config": {
-        "includeFiles": "data.db"
-      }
-    },
-    {
-      "src": "static/**",
-      "use": "@vercel/static"
-    }
-  ],
-  "routes": [
-    { "src": "/static/(.*)", "dest": "/static/$1" },
-    { "src": "/dashboard.html", "dest": "/static/dashboard.html" },
-    { "src": "/(.*)", "dest": "/api/index.py" }
-  ]
-}
+    "builds": [
+      { "src": "api/index.py", "use": "@vercel/python" },
+      { "src": "static/**", "use": "@vercel/static" }
+    ],
+    "routes": [
+      { "src": "/static/(.*)", "dest": "/static/$1" },
+      { "src": "/dashboard.html", "dest": "/static/dashboard.html" },
+      { "src": "/(.*)", "dest": "/api/index.py" }
+    ]
+  }
